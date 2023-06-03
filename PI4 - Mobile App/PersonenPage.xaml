@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PI4___Mobile_App.PersonenPage"
+             Title="Alle Personen">
+
+
+    <VerticalStackLayout BackgroundColor="White">
+
+        <SearchBar
+            Placeholder="Zoeken..."
+            TextChanged="SearchBar_TextChanged"
+            TextColor="Black"
+            >
+        </SearchBar>
+        <!--Lijst van alle namen weergeven, waarin x directive element is-->
+        <ListView  x:Name="LvAllePersonen" RowHeight="80" ItemSelected="LvAllePersonen_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        
+                        <!--Lijst van namen-->
+                        <Grid Margin="5" BackgroundColor="SandyBrown">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="{Binding Afbeelding}" HeightRequest="50" WidthRequest="50" Aspect="AspectFit"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Voornaam}" TextColor="Black"/>
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding Achternaam}" TextColor="Black"/>
+                                <Label Grid.Row="1" Grid.Column="1" Text="Tel:" TextColor="Black"/>
+                                <Label Grid.Row="1" Grid.Column="2" Text="{Binding Telefoonnummer}" TextColor="Black"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>
