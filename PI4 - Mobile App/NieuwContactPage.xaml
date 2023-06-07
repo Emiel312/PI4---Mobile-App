@@ -3,13 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PI4___Mobile_App.NieuwContactPage"
              Title="Nieuw Contact">
+    
+    
     <VerticalStackLayout>
-        <Label Text="Voornaam:" />
-        <Entry x:Name="VoornaamEntry" />
-        <Label Text="Achternaam:" />
-        <Entry x:Name="AchternaamEntry" />
-        <Label Text="Telefoonnummer:" />
-        <Entry x:Name="TelefoonnummerEntry" />
-        <ImageButton Source="saved.png" Clicked="OnSaveClicked" />
+        <Grid Margin="5" BackgroundColor="SandyBrown">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Text="Voornaam:" />
+            <Entry Grid.Row="1" Grid.Column="0" x:Name="VoornaamEntry" />
+            <Label Grid.Row="0" Grid.Column="1" Text="Achternaam:" />
+            <Entry Grid.Row="1" Grid.Column="1" x:Name="AchternaamEntry" />
+            <Label Grid.Row="0" Grid.Column="2" Text="Telefoonnummer:" />
+            <Entry Grid.Row="1" Grid.Column="2" x:Name="TelefoonnummerEntry" />
+            <ImageButton Grid.Row="2" Grid.Column="1" Source="save.png" Clicked="OnSaveClicked" HeightRequest="50" WidthRequest="50" Aspect="AspectFit"/>
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>

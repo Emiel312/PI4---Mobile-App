@@ -7,9 +7,10 @@
         <ToolbarItem IconImageSource="trash.png" Clicked="VerwijderContact_Clicked"
         />
     </ContentPage.ToolbarItems>
-    <VerticalStackLayout>
-        <Label x:Name="LblVoornaam" Text="{Binding Voornaam}"/>
-        <Label x:Name="LblAchternaam" Text="{Binding Achternaam}"/>
-        <Image Source="{Binding Afbeelding}"/>
-    </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label x:Name="LblVoornaam" Text="{Binding Voornaam}"/>
+            <Label x:Name="LblAchternaam" Text="{Binding Achternaam}"/>
+            <Image Source="{Binding Afbeelding}"/>
+        </VerticalStackLayout>
 </ContentPage>

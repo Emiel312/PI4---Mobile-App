@@ -45,7 +45,6 @@ public partial class NieuwContactPage : ContentPage
 
         // Save the Persoon object to JSON file
         await PersonenPage.Json.SchrijfNaarJson(persoon);
-
         await Shell.Current.GoToAsync("..");
     }
 }

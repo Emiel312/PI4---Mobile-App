@@ -54,6 +54,8 @@ public partial class PersonenPage : ContentPage
             return Personen;
         }
 
+
+
         /* void SearchBar_TextChanged(object sender, EventArgs e)
         {
             string searchText = e.NewTextValue;
