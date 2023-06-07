@@ -3,6 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PI4___Mobile_App.PersonenDetails"
              Title="PersonenDetails">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="trash.png" Clicked="VerwijderContact_Clicked"
+        />
+    </ContentPage.ToolbarItems>
     <VerticalStackLayout>
         <Label x:Name="LblVoornaam" Text="{Binding Voornaam}"/>
         <Label x:Name="LblAchternaam" Text="{Binding Achternaam}"/>

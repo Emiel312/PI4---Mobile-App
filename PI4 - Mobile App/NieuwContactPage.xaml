@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PI4___Mobile_App.NieuwContactPage"
+             Title="Nieuw Contact">
+    <VerticalStackLayout>
+        <Label Text="Voornaam:" />
+        <Entry x:Name="VoornaamEntry" />
+        <Label Text="Achternaam:" />
+        <Entry x:Name="AchternaamEntry" />
+        <Label Text="Telefoonnummer:" />
+        <Entry x:Name="TelefoonnummerEntry" />
+        <ImageButton Source="saved.png" Clicked="OnSaveClicked" />
+    </VerticalStackLayout>
+</ContentPage>

@@ -8,6 +8,8 @@ namespace PI4___Mobile_App.Models
 {
     public class Persoon
     {
+        public Persoon()
+        { }
         public string Voornaam { get; set; }
         public string Achternaam { get; set; }
         public string Geslacht { get; set; }

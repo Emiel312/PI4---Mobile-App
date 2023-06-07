@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using PI4___Mobile_App.Data;
+using PI4___Mobile_App.Models;
 
 namespace PI4___Mobile_App;
 
@@ -20,8 +20,7 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
-
-		return builder.Build();
+        return builder.Build();
 	}
 
 }

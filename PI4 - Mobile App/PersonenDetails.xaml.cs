@@ -10,4 +10,7 @@ public partial class PersonenDetails : ContentPage
         LblVoornaam.Text = persoon.Voornaam;
         LblAchternaam.Text = persoon.Achternaam;
     }
+
+    async void VerwijderContact_Clicked(object sender, EventArgs e)
+    { }
 }

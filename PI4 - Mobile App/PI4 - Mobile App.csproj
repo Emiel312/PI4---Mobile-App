@@ -53,6 +53,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="NieuwContactPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="PersonenDetails.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
