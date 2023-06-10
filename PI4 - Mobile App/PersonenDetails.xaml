@@ -7,28 +7,39 @@
         <ToolbarItem IconImageSource="trash.png" Clicked="VerwijderContact_Clicked" />
     </ContentPage.ToolbarItems>
 
-    <Grid>
+    <!-- Grid voor de details van de persoon -->
+    <Grid Margin="5" BackgroundColor="SandyBrown">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <!-- Rijdefinitie voor voornaam -->
             <RowDefinition Height="Auto" />
+            <!-- Rijdefinitie voor achternaam -->
             <RowDefinition Height="Auto" />
+            <!-- Rijdefinitie voor telefoonnummer -->
             <RowDefinition Height="Auto" />
+            <!-- Rijdefinitie voor afbeelding -->
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
+            <!-- Kolomdefinitie voor label -->
             <ColumnDefinition Width="*" />
+            <!-- Kolomdefinitie voor waarde -->
         </Grid.ColumnDefinitions>
 
+        <!-- Voornaam -->
         <Label Grid.Row="0" Grid.Column="0" Text="Voornaam:" />
         <Label Grid.Row="0" Grid.Column="1" x:Name="LblVoornaam" Text="{Binding Voornaam}" />
 
+        <!-- Achternaam -->
         <Label Grid.Row="1" Grid.Column="0" Text="Achternaam:" />
         <Label Grid.Row="1" Grid.Column="1" x:Name="LblAchternaam" Text="{Binding Achternaam}" />
 
+        <!-- Telefoonnummer -->
         <Label Grid.Row="2" Grid.Column="0" Text="Telefoonnummer:" />
         <Label Grid.Row="2" Grid.Column="1" x:Name="LblTelefoonnummer" Text="{Binding Telefoonnummer}" />
 
+        <!-- Afbeelding -->
         <Image Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Source="{Binding Afbeelding}" />
     </Grid>
 </ContentPage>

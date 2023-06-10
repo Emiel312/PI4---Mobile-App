@@ -1,36 +1,36 @@
 using PI4___Mobile_App.Models;
 
-namespace PI4___Mobile_App;
-
-public partial class PersonenDetails : ContentPage
+namespace PI4___Mobile_App
 {
-    private Persoon persoon;
-    public PersonenDetails(Persoon persoon)
+    public partial class PersonenDetails : ContentPage
     {
-        InitializeComponent();
-        this.persoon = persoon;
-        LblVoornaam.Text = persoon.Voornaam;
-        LblAchternaam.Text = persoon.Achternaam;
-        LblTelefoonnummer.Text = persoon.Telefoonnummer;
-    }
-
-
-    async void VerwijderContact_Clicked(object sender, EventArgs e)
-    {
-        List<Persoon> personen = PersonenPage.Json.LeesJson();
-
-        // Find the person to be deleted
-        Persoon personToDelete = personen.FirstOrDefault(p => p.Telefoonnummer == persoon.Telefoonnummer);
-
-        if (personToDelete != null)
+        private Persoon persoon;
+        public PersonenDetails(Persoon persoon)
         {
-            personen.Remove(personToDelete); // Remove the person from the list
+            InitializeComponent();
+            this.persoon = persoon;
+            LblVoornaam.Text = persoon.Voornaam;
+            LblAchternaam.Text = persoon.Achternaam;
+            LblTelefoonnummer.Text = persoon.Telefoonnummer;
+        }
 
-            // Update the JSON data
-            await PersonenPage.Json.SchrijfNaarJson(personen);
+        async void VerwijderContact_Clicked(object sender, EventArgs e)
+        {
+            List<Persoon> personen = PersonenPage.Json.LeesJson();
 
-            // Go back to the previous page or perform any other desired action
-            await Navigation.PopAsync();
+            // Zoek de persoon die verwijderd moet worden
+            Persoon persoonOmTeVerwijderen = personen.FirstOrDefault(p => p.Telefoonnummer == persoon.Telefoonnummer);
+
+            if (persoonOmTeVerwijderen != null)
+            {
+                personen.Remove(persoonOmTeVerwijderen); // Verwijder de persoon uit de lijst
+
+                // Werk de JSON-gegevens bij
+                await PersonenPage.Json.SchrijfNaarJson(personen);
+
+                // Ga terug naar de vorige pagina of voer een andere gewenste actie uit
+                await Navigation.PopAsync();
+            }
         }
     }
 }

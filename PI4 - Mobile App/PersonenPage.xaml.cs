@@ -4,80 +4,71 @@ using System.IO;
 using System.Text.Json;
 
 
-namespace PI4___Mobile_App;
-
-public partial class PersonenPage : ContentPage
+namespace PI4___Mobile_App
 {
-    public PersonenPage()
+    public partial class PersonenPage : ContentPage
     {
-        InitializeComponent();
-    }
-    // Forceren van refresh bij aanbelanden op pagina
-    protected override void OnAppearing()
-    {
-        base.OnAppearing();
-        LvAllePersonen.ItemsSource = Json.LeesJson();
-    }
-
-    private void NieuwContact_Clicked(object sender, EventArgs e)
-    {
-        Navigation.PushAsync(new NieuwContactPage());
-    }
-
-    private void LvAllePersonen_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-    {
-        var selectedItem = e.SelectedItem as Persoon;
-        Navigation.PushAsync(new PersonenDetails(selectedItem));
-    }
-
-    public class Json
-    {
-
-        public static async Task<string> SchrijfNaarJson(Persoon persoon)
+        public PersonenPage()
         {
-            List<Persoon> personen = LeesJson();
-            personen.Add(persoon);
-            string path = Path.Combine(FileSystem.AppDataDirectory, "persons.json");
-            using FileStream createStream = File.Create(path);
-            await JsonSerializer.SerializeAsync(createStream, personen);
-            await createStream.DisposeAsync();
-
-
-            return File.ReadAllText(path);
+            InitializeComponent();
         }
 
-        // SchrijfNaarJson methode t.b.v. verwijderen contacten
-        public static async Task<string> SchrijfNaarJson(List<Persoon> personen)
+        // Forceren van vernieuwing bij het betreden van de pagina
+        protected override void OnAppearing()
         {
-            string path = Path.Combine(FileSystem.AppDataDirectory, "persons.json");
-            using FileStream createStream = File.Create(path);
-            await JsonSerializer.SerializeAsync(createStream, personen);
-            await createStream.DisposeAsync();
-
-
-
-            return File.ReadAllText(path);
+            base.OnAppearing();
+            LvAllePersonen.ItemsSource = Json.LeesJson();
         }
 
-        public static List<Persoon> LeesJson()
+        private void NieuwContact_Clicked(object sender, EventArgs e)
         {
-            string path = Path.Combine(FileSystem.AppDataDirectory, "persons.json");
-            List<Persoon> Personen = new();
-            if (File.Exists(path))
+            Navigation.PushAsync(new NieuwContactPage());
+        }
+
+        private void LvAllePersonen_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var selectedItem = e.SelectedItem as Persoon;
+            Navigation.PushAsync(new PersonenDetails(selectedItem));
+        }
+
+        public class Json
+        {
+            // Methode om naar JSON te schrijven voor het toevoegen van een persoon
+            public static async Task<string> SchrijfNaarJson(Persoon persoon)
             {
-                string jsonString = File.ReadAllText(path);
-                Personen = JsonSerializer.Deserialize<List<Persoon>>(jsonString)!;
+                List<Persoon> personen = LeesJson();
+                personen.Add(persoon);
+                string path = Path.Combine(FileSystem.AppDataDirectory, "persons.json");
+                using FileStream createStream = File.Create(path);
+                await JsonSerializer.SerializeAsync(createStream, personen);
+                await createStream.DisposeAsync();
+
+                return File.ReadAllText(path);
             }
-            return Personen;
+
+            // Methode om naar JSON te schrijven voor het verwijderen van personen
+            public static async Task<string> SchrijfNaarJson(List<Persoon> personen)
+            {
+                string path = Path.Combine(FileSystem.AppDataDirectory, "persons.json");
+                using FileStream createStream = File.Create(path);
+                await JsonSerializer.SerializeAsync(createStream, personen);
+                await createStream.DisposeAsync();
+
+                return File.ReadAllText(path);
+            }
+
+            // Methode om JSON te lezen en een lijst van personen terug te geven
+            public static List<Persoon> LeesJson()
+            {
+                string path = Path.Combine(FileSystem.AppDataDirectory, "persons.json");
+                List<Persoon> Personen = new();
+                if (File.Exists(path))
+                {
+                    string jsonString = File.ReadAllText(path);
+                    Personen = JsonSerializer.Deserialize<List<Persoon>>(jsonString)!;
+                }
+                return Personen;
+            }
         }
-
-
-
-        /* void SearchBar_TextChanged(object sender, EventArgs e)
-        {
-            string searchText = e.NewTextValue;
-             Lvpersonen.ItemsSource = personen.SearchPersonen(searchText);
-        }*/
-}
-    
+    }
 }

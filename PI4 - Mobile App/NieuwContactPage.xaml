@@ -3,26 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PI4___Mobile_App.NieuwContactPage"
              Title="Nieuw Contact">
-    
-    
+
+    <!-- Verticaal stacklayout voor de inhoud van de pagina -->
     <VerticalStackLayout>
+        <!-- Grid voor het invoeren van de contactgegevens -->
         <Grid Margin="5" BackgroundColor="SandyBrown">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
+                <!-- Rijdefinitie voor de voornaam -->
                 <RowDefinition Height="Auto" />
+                <!-- Rijdefinitie voor de achternaam -->
                 <RowDefinition Height="Auto" />
+                <!-- Rijdefinitie voor het telefoonnummer -->
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="80" />
+                <!-- Kolomdefinitie voor het label "Voornaam" -->
                 <ColumnDefinition Width="80" />
+                <!-- Kolomdefinitie voor het label "Achternaam" -->
                 <ColumnDefinition Width="Auto" />
+                <!-- Kolomdefinitie voor het label "Telefoonnummer" -->
             </Grid.ColumnDefinitions>
+
+            <!-- Label "Voornaam" -->
             <Label Grid.Row="0" Grid.Column="0" Text="Voornaam:" />
+            <!-- Invoerveld voor de voornaam -->
             <Entry Grid.Row="1" Grid.Column="0" x:Name="VoornaamEntry" />
+
+            <!-- Label "Achternaam" -->
             <Label Grid.Row="0" Grid.Column="1" Text="Achternaam:" />
+            <!-- Invoerveld voor de achternaam -->
             <Entry Grid.Row="1" Grid.Column="1" x:Name="AchternaamEntry" />
+
+            <!-- Label "Telefoonnummer" -->
             <Label Grid.Row="0" Grid.Column="2" Text="Telefoonnummer:" />
+            <!-- Invoerveld voor het telefoonnummer -->
             <Entry Grid.Row="1" Grid.Column="2" x:Name="TelefoonnummerEntry" />
+
+            <!-- Afbeeldingsknop om het contact op te slaan -->
             <ImageButton Grid.Row="2" Grid.Column="1" Source="save.png" Clicked="OnSaveClicked" HeightRequest="50" WidthRequest="50" Aspect="AspectFit"/>
         </Grid>
     </VerticalStackLayout>

@@ -5,22 +5,15 @@
              Title="Alle Personen"
              BackgroundColor="White">
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="new_contact.png" Clicked="NieuwContact_Clicked"
-        />
+        <ToolbarItem IconImageSource="new_contact.png" Clicked="NieuwContact_Clicked" />
     </ContentPage.ToolbarItems>
 
-<ScrollView>
-    <VerticalStackLayout BackgroundColor="White">
+    <ScrollView>
+        <VerticalStackLayout BackgroundColor="White">
 
-        <!--<SearchBar
-            Placeholder="Zoeken..."
-            TextChanged="SearchBar_TextChanged"
-            TextColor="Black"
-            >
-        </SearchBar>-->
-        <!--Lijst van alle namen weergeven, waarin x directive element is-->
-        
-            <ListView  x:Name="LvAllePersonen" RowHeight="80" ItemSelected="LvAllePersonen_ItemSelected">
+            <!--Lijst van alle namen weergeven, waarin x directive element is-->
+
+            <ListView x:Name="LvAllePersonen" RowHeight="80" ItemSelected="LvAllePersonen_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -36,16 +29,16 @@
                                     <ColumnDefinition Width="80" />
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
-                                <Image Grid.Column="0" Source="{Binding Afbeelding}" HeightRequest="50" WidthRequest="50" Aspect="AspectFit"/>
-                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Voornaam}" TextColor="Black"/>
-                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding Achternaam}" TextColor="Black"/>
-                                <Label Grid.Row="1" Grid.Column="1" Text="Tel:" TextColor="Black"/>
-                                <Label Grid.Row="1" Grid.Column="2" Text="{Binding Telefoonnummer}" TextColor="Black"/>
+                                <Image Grid.Column="0" Source="{Binding Afbeelding}" HeightRequest="50" WidthRequest="50" Aspect="AspectFit" />
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Voornaam}" TextColor="Black" />
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding Achternaam}" TextColor="Black" />
+                                <Label Grid.Row="1" Grid.Column="1" Text="Tel:" TextColor="Black" />
+                                <Label Grid.Row="1" Grid.Column="2" Text="{Binding Telefoonnummer}" TextColor="Black" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-    </VerticalStackLayout>
-</ScrollView>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
