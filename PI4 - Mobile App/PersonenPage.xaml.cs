@@ -11,6 +11,10 @@ public partial class PersonenPage : ContentPage
     public PersonenPage()
     {
         InitializeComponent();
+    }
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
         LvAllePersonen.ItemsSource = Json.LeesJson();
     }
 
@@ -18,7 +22,6 @@ public partial class PersonenPage : ContentPage
     {
         Navigation.PushAsync(new NieuwContactPage());
     }
-
 
     private void LvAllePersonen_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
@@ -37,6 +40,18 @@ public partial class PersonenPage : ContentPage
             using FileStream createStream = File.Create(path);
             await JsonSerializer.SerializeAsync(createStream, personen);
             await createStream.DisposeAsync();
+
+
+            return File.ReadAllText(path);
+        }
+
+        public static async Task<string> SchrijfNaarJson(List<Persoon> personen)
+        {
+            string path = Path.Combine(FileSystem.AppDataDirectory, "persons.json");
+            using FileStream createStream = File.Create(path);
+            await JsonSerializer.SerializeAsync(createStream, personen);
+            await createStream.DisposeAsync();
+
 
 
             return File.ReadAllText(path);

@@ -31,7 +31,7 @@ public partial class NieuwContactPage : ContentPage
     async void OnSaveClicked(object sender, EventArgs e)
     {
 
-        // Create a new Persoon object from the Item data
+        // Nieuwe persoon aanmaken op basis van invoer
         Persoon persoon = new Persoon()
 
         {
@@ -43,7 +43,7 @@ public partial class NieuwContactPage : ContentPage
 
     
 
-        // Save the Persoon object to JSON file
+        // Persoon opslaan naar JSON file
         await PersonenPage.Json.SchrijfNaarJson(persoon);
         await Shell.Current.GoToAsync("..");
     }
