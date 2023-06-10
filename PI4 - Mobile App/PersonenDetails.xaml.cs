@@ -11,6 +11,7 @@ public partial class PersonenDetails : ContentPage
         this.persoon = persoon;
         LblVoornaam.Text = persoon.Voornaam;
         LblAchternaam.Text = persoon.Achternaam;
+        LblTelefoonnummer.Text = persoon.Telefoonnummer;
     }
 
 

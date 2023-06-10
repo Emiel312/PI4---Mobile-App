@@ -12,6 +12,7 @@ public partial class PersonenPage : ContentPage
     {
         InitializeComponent();
     }
+    // Forceren van refresh bij aanbelanden op pagina
     protected override void OnAppearing()
     {
         base.OnAppearing();
@@ -45,6 +46,7 @@ public partial class PersonenPage : ContentPage
             return File.ReadAllText(path);
         }
 
+        // SchrijfNaarJson methode t.b.v. verwijderen contacten
         public static async Task<string> SchrijfNaarJson(List<Persoon> personen)
         {
             string path = Path.Combine(FileSystem.AppDataDirectory, "persons.json");

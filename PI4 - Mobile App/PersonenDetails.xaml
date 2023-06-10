@@ -4,13 +4,31 @@
              x:Class="PI4___Mobile_App.PersonenDetails"
              Title="PersonenDetails">
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="trash.png" Clicked="VerwijderContact_Clicked"
-        />
+        <ToolbarItem IconImageSource="trash.png" Clicked="VerwijderContact_Clicked" />
     </ContentPage.ToolbarItems>
 
-        <VerticalStackLayout>
-            <Label x:Name="LblVoornaam" Text="{Binding Voornaam}"/>
-            <Label x:Name="LblAchternaam" Text="{Binding Achternaam}"/>
-            <Image Source="{Binding Afbeelding}"/>
-        </VerticalStackLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Text="Voornaam:" />
+        <Label Grid.Row="0" Grid.Column="1" x:Name="LblVoornaam" Text="{Binding Voornaam}" />
+
+        <Label Grid.Row="1" Grid.Column="0" Text="Achternaam:" />
+        <Label Grid.Row="1" Grid.Column="1" x:Name="LblAchternaam" Text="{Binding Achternaam}" />
+
+        <Label Grid.Row="2" Grid.Column="0" Text="Telefoonnummer:" />
+        <Label Grid.Row="2" Grid.Column="1" x:Name="LblTelefoonnummer" Text="{Binding Telefoonnummer}" />
+
+        <Image Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Source="{Binding Afbeelding}" />
+    </Grid>
 </ContentPage>
