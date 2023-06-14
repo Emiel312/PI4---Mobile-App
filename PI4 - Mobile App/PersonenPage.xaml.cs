@@ -70,5 +70,15 @@ namespace PI4___Mobile_App
                 return Personen;
             }
         }
+        private void ZoekbalkPersonen_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string searchText = ZoekbalkPersonen.Text;
+            List<Persoon> searchResults = Json.LeesJson().Where(p =>
+                p.Voornaam.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
+                p.Achternaam.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
+                p.Telefoonnummer.Contains(searchText, StringComparison.OrdinalIgnoreCase)
+            ).ToList();
+            LvAllePersonen.ItemsSource = searchResults;
+        }
     }
 }

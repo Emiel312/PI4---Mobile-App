@@ -11,6 +11,8 @@
     <ScrollView>
         <VerticalStackLayout BackgroundColor="White">
 
+            <SearchBar x:Name="ZoekbalkPersonen" Placeholder="Zoek op voornaam, achternaam of telefoonnummer" TextChanged="ZoekbalkPersonen_TextChanged" />
+
             <!--Lijst van alle namen weergeven, waarin x directive element is-->
 
             <ListView x:Name="LvAllePersonen" RowHeight="80" ItemSelected="LvAllePersonen_ItemSelected">
