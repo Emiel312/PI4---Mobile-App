@@ -27,11 +27,11 @@
                                     <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="80" />
-                                    <ColumnDefinition Width="80" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
-                                <Image Grid.Column="0" Source="{Binding Afbeelding}" HeightRequest="50" WidthRequest="50" Aspect="AspectFit" />
+                                <Image Grid.Column="0" Source="person.png" HeightRequest="50" WidthRequest="50" Aspect="AspectFit" />
                                 <Label Grid.Row="0" Grid.Column="1" Text="{Binding Voornaam}" TextColor="Black" />
                                 <Label Grid.Row="0" Grid.Column="2" Text="{Binding Achternaam}" TextColor="Black" />
                                 <Label Grid.Row="1" Grid.Column="1" Text="Tel:" TextColor="Black" />

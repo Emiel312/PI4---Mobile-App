@@ -12,6 +12,7 @@ namespace PI4___Mobile_App
             LblVoornaam.Text = persoon.Voornaam;
             LblAchternaam.Text = persoon.Achternaam;
             LblTelefoonnummer.Text = persoon.Telefoonnummer;
+            ImgPersoon.Source = "person.png";
         }
 
         async void VerwijderContact_Clicked(object sender, EventArgs e)
