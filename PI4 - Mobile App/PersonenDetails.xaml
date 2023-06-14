@@ -5,10 +5,11 @@
              Title="PersonenDetails">
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="trash.png" Clicked="VerwijderContact_Clicked" />
+        <ToolbarItem IconImageSource="phone.png" Clicked="PhoneDialer_Clicked" />
     </ContentPage.ToolbarItems>
 
     <!-- Grid voor de details van de persoon -->
-    <Grid Margin="5" BackgroundColor="SandyBrown">
+    <Grid Margin="5" RowSpacing="6" ColumnSpacing="6" BackgroundColor="SandyBrown">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <!-- Rijdefinitie voor voornaam -->

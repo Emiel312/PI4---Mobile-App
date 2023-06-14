@@ -11,7 +11,7 @@
     <ScrollView>
         <VerticalStackLayout BackgroundColor="White">
 
-            <SearchBar x:Name="ZoekbalkPersonen" Placeholder="Zoek op voornaam, achternaam of telefoonnummer" TextChanged="ZoekbalkPersonen_TextChanged" />
+            <SearchBar x:Name="ZoekbalkPersonen" Placeholder="Zoek op voornaam, achternaam of telefoonnummer" TextChanged="ZoekbalkPersonen_TextChanged" TextColor="Black"/>
 
             <!--Lijst van alle namen weergeven, waarin x directive element is-->
 

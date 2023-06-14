@@ -7,7 +7,7 @@
     <!-- Verticaal stacklayout voor de inhoud van de pagina -->
     <VerticalStackLayout>
         <!-- Grid voor het invoeren van de contactgegevens -->
-        <Grid Margin="5" BackgroundColor="SandyBrown">
+        <Grid Margin="5" RowSpacing="6" ColumnSpacing="6" BackgroundColor="SandyBrown">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <!-- Rijdefinitie voor de voornaam -->
@@ -17,9 +17,9 @@
                 <!-- Rijdefinitie voor het telefoonnummer -->
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="Auto" />
                 <!-- Kolomdefinitie voor het label "Voornaam" -->
-                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="Auto" />
                 <!-- Kolomdefinitie voor het label "Achternaam" -->
                 <ColumnDefinition Width="Auto" />
                 <!-- Kolomdefinitie voor het label "Telefoonnummer" -->

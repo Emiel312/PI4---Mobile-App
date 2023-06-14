@@ -32,5 +32,21 @@ namespace PI4___Mobile_App
                 await Navigation.PopAsync();
             }
         }
+        private void DialNumber(string telefoonNummer)
+        {
+            try
+            {
+                PhoneDialer.Open(telefoonNummer);
+            }
+            catch (Exception ex)
+            {
+                string errorMessage = "Kan het huidige nummer niet bellen";
+            }
+        }
+        private void PhoneDialer_Clicked(object sender, EventArgs e)
+        {
+            DialNumber(persoon.Telefoonnummer);
+        }
+
     }
 }
